@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarela Visual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Aquarela Visual</h1>
+        <h2>Bem-vindo ao site Aquarela Visual!</h2>
+        <ul type="none">
+            <li style="font-size: 20px;">&#x1F4F7; Hobby photography</li>
+            <li style="font-size: 20px;">&#x1F31F; Construindo memórias pixel por pixel</li>
+            <li style="font-size: 20px;">&#x1F4F1; Fotografando com Xiaomi Redmi Note 11</li>
+        </ul>
+        <button><a href="https://www.instagram.com/aquarela_visual/" target="_blank" rel="external">Siga nossas redes sociais!</a></button>
+        <h3>Fotografias da Natureza</h3>
+        <div class="imagens">
+            <img src="/img/natureza/mata.png" alt="Foto de natureza 1" class="foto">
+            <img src="/img/natureza/mata2.png" alt="Foto de natureza 2" class="foto">
+            <img src="/img/natureza/arvores.png" alt="Foto de natureza 3"class="foto">
+            <img src="/img/natureza/arvore2.png" alt="Foto de natureza 4"class="foto">
+            <img src="/img/natureza/folhas.png" alt="Foto de natureza 5"class="foto">
+        </div>  
+        <div class="imagens">
+            <img src="/img/natureza/praia.png" alt="Foto de natureza 6"class="foto">
+            <img src="/img/natureza/praia2.png" alt="Foto de natureza 7"class="foto">
+            <img src="/img/natureza/praia3.png" alt="Foto de natureza 8"class="foto">
+            <img src="/img/natureza/praia4.png" alt="Foto de natureza 9"class="foto">
+            <img src="/img/natureza/praia5.png" alt="Foto de natureza 10"class="foto">
+        </div> 
+        <h3>Fotografias de Animais</h3>
+        <div class="imagens">
+            <img src="/img/animais/animais.png" alt="Foto de animais 1"class="foto">
+            <img src="/img/animais/animais2.png" alt="Foto de animais 2"class="foto">
+            <img src="/img/animais/animais3.png" alt="Foto de animais 3"class="foto">
+            <img src="/img/animais/animais4.png" alt="Foto de animais 4"class="foto">
+            <img src="/img/animais/animais5.png" alt="Foto de animais 5"class="foto">
+        </div> 
+        <h3>Fotografias do Cotidiano</h3>
+        <div class="imagens">
+            <img src="/img/cotidiano/cotidiano.png" alt="Foto do cotidiano 1"class="foto">
+            <img src="/img/cotidiano/cotidiano2.png" alt="Foto do cotidiano 2"class="foto">
+            <img src="/img/cotidiano/cotidiano3.png" alt="Foto do cotidiano 3"class="foto">
+            <img src="/img/cotidiano/cotidiano4.png" alt="Foto do cotidiano 4"class="foto">
+            <img src="/img/cotidiano/cotidiano5.png" alt="Foto do cotidiano 5"class="foto">
+        </div> 
+        <h3>Fotografias Aleatórias</h3>
+        <div class="imagens">
+            <img src="/img/aleatorias/aleatoria.png" alt="Foto Aleatória 1"class="foto">
+            <img src="/img/aleatorias/aleatoria2.png" alt="Foto Aleatória 2"class="foto">
+            <img src="/img/aleatorias/aleatoria3.png" alt="Foto Aleatória 3"class="foto">
+            <img src="/img/aleatorias/aleatoria4.png" alt="Foto Aleatória 4"class="foto">
+            <img src="/img/aleatorias/aleatoria5.png" alt="Foto Aleatória 5"class="foto">
+        </div> 
+
+        <!--Container para o lightbox-->
+        <div id="lightbox" class="lightbox">
+            <span id="fechar">&times;</span>
+            <img id="imagem-ampliada" src="" alt="Imagem ampliada">
+        </div>
+
+        <!--Melhores Frases -->
+
+
+    </main>
+    <script>
+        const imagens = document.querySelectorAll('.foto');
+        const lightbox = document.getElementById('lightbox');
+        const imgAmpliada = document.getElementById('imagem-ampliada');
+        const fechar = document.getElementById('fechar');
+
+        // Abrir
+        imagens.forEach(img => {
+        img.addEventListener('click', () => {
+            imgAmpliada.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+        });
+
+        // Fechar pelo botão
+        fechar.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        });
+
+        // Fechar clicando fora
+        lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+        });
+    </script>
+</body>
+</html>
